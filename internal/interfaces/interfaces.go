@@ -1,6 +1,6 @@
 package interfaces
 
-import "github.com/Vefo1/Kvant_practice/internal/models" // Replace with your actual module name
+import "github.com/Vefo1/Kvant_practice/internal/models"
 
 // PredictService defines the interface for the prediction business logic
 type PredictService interface {

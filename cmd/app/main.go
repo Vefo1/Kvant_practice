@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Vefo1/Kvant_practice/config"              // Replace with your actual module name
-	"github.com/Vefo1/Kvant_practice/internal/handler"    // Replace with your actual module name
-	"github.com/Vefo1/Kvant_practice/internal/middleware" // Replace with your actual module name
-	"github.com/Vefo1/Kvant_practice/internal/services"   // Replace with your actual module name
-	"github.com/Vefo1/Kvant_practice/pkg/logger"          // Replace with your actual module name
+	"github.com/Vefo1/Kvant_practice/config"
+	"github.com/Vefo1/Kvant_practice/internal/handler"
+	"github.com/Vefo1/Kvant_practice/internal/middleware"
+	"github.com/Vefo1/Kvant_practice/internal/services"
+	"github.com/Vefo1/Kvant_practice/pkg/logger"
 )
 
 func main() {

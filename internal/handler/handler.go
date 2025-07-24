@@ -3,12 +3,12 @@ package handler
 import (
 	"fmt"
 	"net/http"
-	"net/url" // Import net/url for url.Values
+	"net/url"
 	"strconv"
 
-	"github.com/Vefo1/Kvant_practice/internal/interfaces" // Replace with your actual module name
-	"github.com/Vefo1/Kvant_practice/internal/models"     // Replace with your actual module name
-	"github.com/Vefo1/Kvant_practice/pkg/logger"          // Replace with your actual module name
+	"github.com/Vefo1/Kvant_practice/internal/interfaces"
+	"github.com/Vefo1/Kvant_practice/internal/models"
+	"github.com/Vefo1/Kvant_practice/pkg/logger"
 )
 
 // Handler handles HTTP requests
@@ -26,7 +26,6 @@ func NewHandler(service interfaces.PredictService, log *logger.Logger) *Handler 
 }
 
 // Helper function to safely parse float64 from query parameters
-// Changed query type from map[string][]string to url.Values
 func (h *Handler) parseFloat(paramName string, query url.Values) (float64, error) {
 	valStr := query.Get(paramName)
 	if valStr == "" {
@@ -40,7 +39,6 @@ func (h *Handler) parseFloat(paramName string, query url.Values) (float64, error
 }
 
 // Helper function to safely parse int from query parameters
-// Changed query type from map[string][]string to url.Values
 func (h *Handler) parseInt(paramName string, query url.Values) (int, error) {
 	valStr := query.Get(paramName)
 	if valStr == "" {
@@ -93,7 +91,7 @@ func (h *Handler) HBA1CPredictHandler(w http.ResponseWriter, r *http.Request) {
 		func(data interface{}) ([]byte, int, error) {
 			return h.predictService.PredictHBA1C(data.(models.HBA1CPredictRequest))
 		},
-		func(query url.Values) (interface{}, error) { // Changed query type to url.Values
+		func(query url.Values) (interface{}, error) {
 			age, err := h.parseInt("age", query)
 			if err != nil {
 				return nil, err
@@ -183,7 +181,7 @@ func (h *Handler) LdllPredictHandler(w http.ResponseWriter, r *http.Request) {
 		func(data interface{}) ([]byte, int, error) {
 			return h.predictService.PredictLdll(data.(models.LdllPredictRequest))
 		},
-		func(query url.Values) (interface{}, error) { // Changed query type to url.Values
+		func(query url.Values) (interface{}, error) {
 			age, err := h.parseInt("age", query)
 			if err != nil {
 				return nil, err
@@ -217,7 +215,7 @@ func (h *Handler) FerrPredictHandler(w http.ResponseWriter, r *http.Request) {
 		func(data interface{}) ([]byte, int, error) {
 			return h.predictService.PredictFerr(data.(models.FerrPredictRequest))
 		},
-		func(query url.Values) (interface{}, error) { // Changed query type to url.Values
+		func(query url.Values) (interface{}, error) {
 			age, err := h.parseInt("age", query)
 			if err != nil {
 				return nil, err
@@ -303,7 +301,7 @@ func (h *Handler) LdlPredictHandler(w http.ResponseWriter, r *http.Request) {
 		func(data interface{}) ([]byte, int, error) {
 			return h.predictService.PredictLdl(data.(models.LdlPredictRequest))
 		},
-		func(query url.Values) (interface{}, error) { // Changed query type to url.Values
+		func(query url.Values) (interface{}, error) {
 			age, err := h.parseInt("age", query)
 			if err != nil {
 				return nil, err
@@ -393,7 +391,7 @@ func (h *Handler) TgPredictHandler(w http.ResponseWriter, r *http.Request) {
 		func(data interface{}) ([]byte, int, error) {
 			return h.predictService.PredictTg(data.(models.TgPredictRequest))
 		},
-		func(query url.Values) (interface{}, error) { // Changed query type to url.Values
+		func(query url.Values) (interface{}, error) {
 			age, err := h.parseInt("age", query)
 			if err != nil {
 				return nil, err
@@ -483,7 +481,7 @@ func (h *Handler) HdlPredictHandler(w http.ResponseWriter, r *http.Request) {
 		func(data interface{}) ([]byte, int, error) {
 			return h.predictService.PredictHdl(data.(models.HdlPredictRequest))
 		},
-		func(query url.Values) (interface{}, error) { // Changed query type to url.Values
+		func(query url.Values) (interface{}, error) {
 			age, err := h.parseInt("age", query)
 			if err != nil {
 				return nil, err

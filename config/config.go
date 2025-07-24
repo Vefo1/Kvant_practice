@@ -12,7 +12,7 @@ type Config struct {
 		Port int `mapstructure:"port"`
 	} `mapstructure:"server"`
 	ExternalAPI struct {
-		BaseURL string `mapstructure:"base_url"` // Changed to BaseURL
+		BaseURL string `mapstructure:"base_url"`
 		Token   string `mapstructure:"token"`
 	} `mapstructure:"external_api"`
 	AppAuth struct {
