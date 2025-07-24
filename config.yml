@@ -1,0 +1,13 @@
+server:
+  port: 8080 
+
+external_api:
+  base_url: "https://apiml.labhub.online/api/v1/predict"
+  token: "0l62<EJi/zJx]a?" 
+
+app_auth:
+  token: "m31A9Wo1=g#5c9z" 
+  header_name: "X-App-Auth" 
+
+logging:
+  level: "info" 
